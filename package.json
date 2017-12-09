@@ -1,0 +1,51 @@
+{
+  "title": "Colosseum",
+  "name": "the-colosseum",
+  "version": "4.0.0-beta.2",
+  "description": "A grayscale one page HTML theme for Bootstrap.",
+  "keywords": [
+    "css",
+    "sass",
+    "html",
+    "responsive",
+    "theme",
+    "template"
+  ],
+  "homepage": "https://startbootstrap.com/template-overviews/grayscale",
+  "bugs": {
+    "url": "https://github.com/BlackrockDigital/startbootstrap-grayscale/issues",
+    "email": "feedback@startbootstrap.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "node server",
+    "postinstall" : "gulp dev"
+  },
+  "author": "The Colosseum",
+  "contributors": [
+    "Kader Mohideen Fasod (http://fasid.herokuapp.com/)"
+  ],
+   "engines": {
+    "node": "9.2.0",
+    "npm": "5.5.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BlackrockDigital/startbootstrap-grayscale.git"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta.2",
+    "font-awesome": "4.7.0",
+    "jquery": "^3.2.1",
+    "gulp": "^3.9.1",
+    "jquery.easing": "^1.4.1"
+  },
+  "devDependencies": {
+    "browser-sync": "2.18.13",
+    "gulp-clean-css": "3.9.0",
+    "gulp-header": "1.8.9",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "3.0.0"
+  }
+}
