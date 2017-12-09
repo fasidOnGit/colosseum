@@ -8,18 +8,7 @@ var email = require('./email');
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
 
-// Instruct the app
-// to use the forceSSL
-// middleware
-app.use(forceSSL());
-app.use((req , res , next) => {
-  res.setHeader(`Access-Control-Allow-Origin` , `*`);
-  res.setHeader(`Access-Control-Allow-Credentials` , `true`);
-  res.setHeader(`Access-Control-Allow-Methods` , `GET, HEAD , OPTIONS, POST , DELETE`);
-  res.setHeader(`Access-Control-Allow-Headers`, `Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers`);
 
- next();  
-});
 
 // If an incoming request uses
 // a protocol other than HTTPS,
@@ -36,6 +25,19 @@ const forceSSL = function() {
     next();
   }
 }
+// Instruct the app
+// to use the forceSSL
+// middleware
+app.use(forceSSL());
+
+app.use((req , res , next) => {
+  res.setHeader(`Access-Control-Allow-Origin` , `*`);
+  res.setHeader(`Access-Control-Allow-Credentials` , `true`);
+  res.setHeader(`Access-Control-Allow-Methods` , `GET, HEAD , OPTIONS, POST , DELETE`);
+  res.setHeader(`Access-Control-Allow-Headers`, `Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers`);
+
+ next();  
+});
 
 
 // Run the app by serving the static files
