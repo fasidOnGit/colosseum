@@ -20,7 +20,6 @@
   "scripts": {
     "start": "node server"
   },
-  "proxy" : "http://localhost:8080",
   "author": "The Colosseum",
   "contributors": [
     "Kader Mohideen Fasod (http://fasid.herokuapp.com/)"
