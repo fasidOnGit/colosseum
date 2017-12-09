@@ -18,14 +18,13 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "node server",
-    "postinstall" : "gulp dev"
+    "start": "node server"
   },
   "author": "The Colosseum",
   "contributors": [
     "Kader Mohideen Fasod (http://fasid.herokuapp.com/)"
   ],
-   "engines": {
+  "engines": {
     "node": "9.2.0",
     "npm": "5.5.1"
   },
@@ -35,9 +34,10 @@
   },
   "dependencies": {
     "bootstrap": "^4.0.0-beta.2",
+    "express": "^4.16.2",
     "font-awesome": "4.7.0",
-    "jquery": "^3.2.1",
     "gulp": "^3.9.1",
+    "jquery": "^3.2.1",
     "jquery.easing": "^1.4.1"
   },
   "devDependencies": {
