@@ -20,7 +20,7 @@
   "scripts": {
     "start": "node server"
   },
-  "proxy" : "http://localhost:8080",
+  "proxy": "http://localhost:8080",
   "author": "The Colosseum",
   "contributors": [
     "Kader Mohideen Fasod (http://fasid.herokuapp.com/)"
@@ -40,7 +40,8 @@
     "font-awesome": "4.7.0",
     "gulp": "^3.9.1",
     "jquery": "^3.2.1",
-    "jquery.easing": "^1.4.1"
+    "jquery.easing": "^1.4.1",
+    "string": "^3.3.3"
   },
   "devDependencies": {
     "browser-sync": "2.18.13",

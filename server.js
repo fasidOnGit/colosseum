@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 var email = require('./email');
+var S = require('string');
 
 
 app.use(bodyParser.urlencoded({extended : true}));
@@ -52,19 +53,22 @@ app.get('/*', function(req, res) {
 });
 
 app.post('/sendEmail' , function (req , res) {
-  email.mail({email : 'fasidmpm@gmail.com' , from : req.body.email , subject : `From ${req.body.email} : ${req.body.subject}` , desc : req.body.desc}).then(data => {
-    console.log(data)
+  console.log(req.body);
+  email.mail({email : 'viveksm6@gmail.com' , from : req.body.email , subject : `From ${req.body.email} : ${req.body.subject}` , desc : req.body.desc}).then(data => {
+    console.log('deii' , data)
     thankyou = S(thankyou).replaceAll('$[name]' , req.body.name).s;
     thankyou = S(thankyou).replaceAll('$[subject]' , req.body.subject).s;
-    email.mail({email:req.body.email , from : 'no-reply' , subject : 'Your application to Colosseum' , desc : thankyou})
+    email.mail({email:req.body.email , from : 'no-reply' , subject : 'Your application to The Colosseum Sports' , desc : thankyou})
       .then(data => {
         console.log('Yep' , data)
       res.status(200).send('Thank You!! we will get back to you.');
       }).catch(err => {
+        console.log(err)
         res.status(200).send('Thank You!! we will get back to you.')
       });
 
   }).catch(err => {
+    console.log('oops' , err);
     res.status(200).send(`Aw!!, Unfortunately our Mailer messed up. Mail  @ xyz@gmail.com`);
   });
 })
@@ -81,5 +85,7 @@ Dear $[name],
 Untill then please be paitent  your mail is important to us.
 
 Regards,
-The Colosseum,
+The Colosseum Sports,
+India
+website : thecsports.com
 `;

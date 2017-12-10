@@ -20,6 +20,35 @@
     $('.navbar-collapse').collapse('hide');
   });
 
+  //Form Submit AJAX
+  
+     $("#ajaxform").submit(function(e)
+{
+    var postData = $(this).serialize();
+    console.log(postData)
+    var formURL = $(this).attr("action");
+    console.log(formURL)
+    $.ajax(
+    {
+        url : formURL,
+        type: "POST",
+        data : postData,
+        success:function(data, textStatus, jqXHR) 
+        {
+            //data: return data from server
+        },
+        error: function(jqXHR, textStatus, errorThrown) 
+        {
+            //if fails      
+        }
+    });
+    e.preventDefault(); //STOP default action
+    // e.unbind(); //unbind. to stop multiple form submit.
+});
+ 
+// $("#ajaxform").submit(); //Submit  the FORM
+
+
   // Activate scrollspy to add active class to navbar items on scroll
   $('body').scrollspy({
     target: '#mainNav',
@@ -44,10 +73,10 @@
 // Google Maps Scripts
 var map = null;
 // When the window has finished loading create our google map below
-google.maps.event.addDomListener(window, 'load', init);
-google.maps.event.addDomListener(window, 'resize', function() {
-  map.setCenter(new google.maps.LatLng(40.6700, -73.9400));
-});
+// google.maps.event.addDomListener(window, 'load', init);
+// google.maps.event.addDomListener(window, 'resize', function() {
+//   map.setCenter(new google.maps.LatLng(40.6700, -73.9400));
+// });
 
 function init() {
   // Basic options for a simple Google Map
@@ -192,3 +221,4 @@ function init() {
     icon: image
   });
 }
+
