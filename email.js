@@ -1,7 +1,7 @@
 var email 	= require("emailjs");
 var server 	= email.server.connect({
-   user:    "viveksm6@gmail.com", 
-   password:"fqsuxophvckdfszt", 
+   user:    "xxxxx@gmail.com", 
+   password:"xxxxxxxxxxxxx", 
    host:    "smtp.gmail.com",
    port : 465,
    ssl : true
@@ -12,7 +12,7 @@ exports.mail=function(data) {
 	console.log(data.email , 'try')
 	return new Promise(function(resolve , reject) {
 	server.send({
-	from : 'fasidmpm@gmail.com',
+	from : 'xxxxxxxxx@gmail.com',
 	text : data.desc,
 	to:data.email,
 	subject:`${data.subject}`
